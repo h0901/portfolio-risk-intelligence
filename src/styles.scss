@@ -1,0 +1,74 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$dark-theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  typography: (
+    brand-family: 'Inter, sans-serif',
+    bold-weight: 600
+  )
+));
+
+html {
+  @include mat.all-component-themes($dark-theme);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0f1117;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+code, .mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Make Material cards/tables transparent so our bg shows through */
+.mat-mdc-card {
+  background-color: #1a1f2e !important;
+  color: #e2e8f0 !important;
+}
+
+.mat-mdc-table {
+  background: transparent !important;
+  color: #e2e8f0 !important;
+}
+
+.mat-mdc-header-row {
+  background: #1a1f2e !important;
+}
+
+.mat-mdc-row {
+  background: transparent !important;
+  color: #e2e8f0 !important;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  background: rgba(255,255,255,0.04) !important;
+}
+
+.mat-mdc-header-cell {
+  color: #64748b !important;
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom-color: #2d3748 !important;
+}
+
+.mat-mdc-cell {
+  color: #e2e8f0 !important;
+  border-bottom-color: #2d3748 !important;
+}
+
+.mat-mdc-snack-bar-container {
+  --mdc-snackbar-container-color: #1e2433;
+  --mdc-snackbar-supporting-text-color: #e2e8f0;
+}
