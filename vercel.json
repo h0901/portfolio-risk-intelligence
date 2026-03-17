@@ -1,6 +1,12 @@
 {
   "buildCommand": "ng build --configuration production",
-  "outputDirectory": "dist/portfolio-risk-platform",
+  "outputDirectory": "dist/portfolio-risk-platform/browser",
   "framework": "angular",
-  "installCommand": "npm install --legacy-peer-deps"
+  "installCommand": "npm install --legacy-peer-deps",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
