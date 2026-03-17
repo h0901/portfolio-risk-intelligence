@@ -1,0 +1,6 @@
+{
+  "buildCommand": "ng build --configuration production",
+  "outputDirectory": "dist/portfolio-risk-platform",
+  "framework": "angular",
+  "installCommand": "npm install --legacy-peer-deps"
+}
